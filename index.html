@@ -1161,6 +1161,11 @@ flex-basis: calc(25% - 20px);
 padding: 0px;
 box-sizing: border-box;
 }
+  
+  
+  .columnzapierelastic {
+text-align: right !important;
+}
       
 .txt0009zapiertop {
 font-size: 32px !important;
@@ -1277,6 +1282,36 @@ background: -webkit-linear-gradient(#de663b, #ff6c37, #ff713d) !important;
 
 .productsaasduo {
 background-color: #f4f4f4;
+    color: #06f;
+    border: none;
+    border-radius: 0px;
+    border: 0px solid transparent;
+    cursor: pointer !important;
+    font-size: 22px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-right: 5px;
+    font-family: "saasduoPAR" !important;
+    height: 28px;
+    white-space: nowrap;
+    margin-bottom: 12px;
+display: none;
+}
+  
+  .icondownload {
+width:30px;
+}
+  
+  
+.productsaasduo:hover {
+color: #06f;
+}
+  
+  
+  .productsaasduoparent {
+background-color: #f4f4f4;
 color: #1b1b20;
 border: none;
 border-radius: 12px;
@@ -1294,13 +1329,16 @@ white-space: nowrap;
 margin-bottom: 12px;
 }
   
-.productsaasduo:hover {
+.productsaasduoparent:hover {
 color: #06f;
 border: none;
 border-radius: 12px;
 border: 1px solid #d4d4d7;
 box-shadow: 0 0 0px 4px #008eff38;
 }
+    
+  
+  
       
 .saas-dropdown {
 display: none;
@@ -1603,7 +1641,7 @@ padding-bottom: 10px;
 .shared-partial.uptime-90-days-wrapper { 
     padding-top: 5px; 
     margin-bottom: -2px;
-  cursor: none !important;
+  cursor: default !important;
 } 
 
 .shared-partial.uptime-90-days-wrapper svg  { 
@@ -1612,7 +1650,7 @@ padding-bottom: 10px;
     height: 34px; 
     width: 100%; 
     overflow: hidden;
-  cursor: none !important;
+  cursor: default !important;
 } 
   
   
@@ -1628,7 +1666,7 @@ padding-bottom: 10px;
     font-size: 14px;
     font-family: "saasduoPAR" !important;
   margin-top: 10px;
-  cursor: none !important;
+  cursor: default !important;
 } 
 
 .shared-partial.uptime-90-days-wrapper .legend .legend-item  { 
@@ -1638,28 +1676,28 @@ padding-bottom: 10px;
         color: #5d5c69;
     font-size: 14px;
     font-family: "saasduoPAR" !important;
-  cursor: none !important;
+  cursor: default !important;
 } 
 
 .shared-partial.uptime-90-days-wrapper .legend .legend-item.light  { 
       color: #5d5c69;
     font-size: 14px;
     font-family: "saasduoPAR" !important;
-  cursor: none !important;
+  cursor: default !important;
 } 
 
 .shared-partial.uptime-90-days-wrapper .legend .legend-item  { 
         color: #5d5c69;
     font-size: 14px;
     font-family: "saasduoPAR" !important;
-  cursor: none !important;
+  cursor: default !important;
 } 
 
 .shared-partial.uptime-90-days-wrapper .legend .legend-item.light  { 
       color: #5d5c69;
     font-size: 14px;
     font-family: "saasduoPAR" !important;
-  cursor: none !important;
+  cursor: default !important;
 } 
 
 .shared-partial.uptime-90-days-wrapper .legend .spacer  { 
@@ -1670,7 +1708,7 @@ padding-bottom: 10px;
       color: #5d5c69;
     font-size: 14px;
     font-family: "saasduoPAR" !important;
-  cursor: none !important;
+  cursor: default !important;
 } 
 
 .shared-partial.uptime-90-days-wrapper .legend .spacer  { 
@@ -1678,7 +1716,7 @@ padding-bottom: 10px;
       color: #5d5c69;
     font-size: 14px;
     font-family: "saasduoPAR" !important;
-  cursor: none !important;
+  cursor: default !important;
 } 
   
   
@@ -1695,7 +1733,7 @@ font-style: normal !important;
   
   .uptime-day:hover  { 
 opacity: 0.5 !important;
-  cursor: none;
+  cursor: pointer;
 
 } 
   
@@ -2768,14 +2806,37 @@ class="endillust"
 </p>
 </div>
         
-<div class="columnzapier tapresponsive">              
+<div class="columnzapier columnzapierelastic tapresponsive">              
 <p class="priceblockTXT2footer">
 SaaSduo compliance
 </p>
+<button class="productsaasduoparent" id="showCertificates">Show Certificates</button>
 <a target="_blank" href="/file/iso20000noc"> <button class="productsaasduo">ISO 20000 NOC</button></a>
 <a target="_blank" href="/file/iso27001isms"> <button class="productsaasduo">ISO 27001 ISMS</button></a>
-<a target="_blank" href="/file/aicpasoc2t2"> <button class="productsaasduo">AICPA SOC 2 T2</button></a>
+<a target="_blank" href="/file/aicpasoc2t2">
+  <button class="productsaasduo">
+    <img src="https://cdn.glitch.global/c0151ab8-f45e-43cf-ba43-a2348a9a865e/SaaSduo%20Icon%20Red%20mic.svg?v=1704621941006" alt="Icon" class="icondownload">
+    AICPA SOC 2 T2
+  </button>
+</a>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Récupérer les éléments du DOM
+        var showCertificatesButton = document.getElementById('showCertificates');
+        var certificateButtons = document.querySelectorAll('.productsaasduo');
 
+        // Ajouter un écouteur d'événement au bouton "Show Certificates"
+        showCertificatesButton.addEventListener('click', function () {
+            // Afficher les boutons des certificats
+            for (var i = 0; i < certificateButtons.length; i++) {
+                certificateButtons[i].style.display = 'inline-block';
+            }
+
+            // Masquer le bouton "Show Certificates"
+            showCertificatesButton.style.display = 'none';
+        });
+    });
+</script>
   </div>
         
 </div>
